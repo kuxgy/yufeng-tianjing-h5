@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>龙城·誉峰天境 | 现房即买即办证</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23b8924a'>誉</text></svg>">
+<style>
+  :root{
+    --brown-900:#2a1c10;
+    --brown-800:#3a2a1a;
+    --brown-700:#54402a;
+    --brown-500:#8a6d4a;
+    --gold:#b8924a;
+    --gold-light:#d4b572;
+    --cream:#faf5ec;
+    --cream-2:#f3ebdb;
+    --ink:#2b1d12;
+    --ink-soft:#6b5844;
+    --line:#e3d6bf;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
+    background:#e8e0d0;
+    color:var(--ink);
+    line-height:1.6;
+  }
+  .phone{
+    max-width:480px;margin:0 auto;background:var(--cream);
+    box-shadow:0 0 40px rgba(0,0,0,.15);
+    overflow:hidden;position:relative;
+  }
+  .serif{font-family:"Songti SC","STSong","SimSun","Noto Serif SC",serif;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;height:100vh;min-height:640px;
+    background:linear-gradient(180deg,rgba(42,28,16,.35) 0%,rgba(42,28,16,.55) 55%,rgba(42,28,16,.92) 100%),
+      url('assets/image1.jpeg') center/cover no-repeat;
+    display:flex;flex-direction:column;align-items:center;justify-content:space-between;
+    padding:48px 24px 36px;color:#fff;
+  }
+  .hero-logo{width:200px;filter:brightness(0) invert(1);opacity:.95;}
+  .hero-mid{text-align:center;}
+  .hero-tag{
+    font-size:13px;letter-spacing:.4em;color:var(--gold-light);
+    margin-bottom:18px;padding-left:.4em;
+  }
+  .hero-title{
+    font-size:52px;font-weight:900;letter-spacing:.08em;line-height:1.15;
+    text-shadow:0 4px 20px rgba(0,0,0,.4);
+  }
+  .hero-sub{
+    margin-top:18px;font-size:14px;letter-spacing:.15em;opacity:.9;
+  }
+  .hero-divider{
+    width:60px;height:2px;background:var(--gold);margin:20px auto;
+  }
+  .hero-scroll{
+    font-size:11px;letter-spacing:.3em;opacity:.7;animation:bob 2s ease-in-out infinite;
+  }
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+  /* ===== 通用 section ===== */
+  section{padding:44px 24px;}
+  .sec-head{text-align:center;margin-bottom:28px;}
+  .sec-eyebrow{
+    font-size:11px;letter-spacing:.4em;color:var(--gold);padding-left:.4em;margin-bottom:10px;
+  }
+  .sec-title{
+    font-size:26px;font-weight:800;color:var(--brown-800);letter-spacing:.05em;
+  }
+  .sec-line{width:40px;height:2px;background:var(--gold);margin:14px auto 0;}
+
+  /* ===== 配套速览条 ===== */
+  .quick-bar{
+    background:var(--brown-800);color:#f3ebdb;padding:22px 20px;text-align:center;
+  }
+  .quick-bar .q-main{font-size:15px;color:var(--gold-light);letter-spacing:.1em;margin-bottom:10px;font-weight:600;}
+  .quick-bar .q-sub{font-size:12.5px;line-height:1.9;opacity:.85;letter-spacing:.05em;}
+
+  /* ===== 三档优惠 ===== */
+  .deal{background:var(--cream);}
+  .deal-card{
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:22px 20px;margin-bottom:18px;position:relative;overflow:hidden;
+    box-shadow:0 4px 18px rgba(84,64,42,.06);
+  }
+  .deal-card.best{
+    border:2px solid var(--gold);
+    box-shadow:0 8px 28px rgba(184,146,74,.22);
+  }
+  .deal-badge{
+    position:absolute;top:14px;right:-32px;transform:rotate(38deg);
+    background:var(--gold);color:#fff;font-size:11px;padding:4px 36px;letter-spacing:.1em;
+  }
+  .deal-stage{
+    font-size:12px;color:var(--gold);letter-spacing:.2em;font-weight:700;margin-bottom:4px;
+  }
+  .deal-date{font-size:13px;color:var(--ink-soft);margin-bottom:12px;}
+  .deal-title{
+    font-size:19px;font-weight:800;color:var(--brown-800);margin-bottom:12px;letter-spacing:.03em;
+  }
+  .deal-card.best .deal-title{color:var(--gold);}
+  .deal-gifts{font-size:13.5px;line-height:1.85;color:var(--ink);}
+  .deal-gifts .hl{color:var(--brown-700);font-weight:600;}
+  .deal-imgs{display:flex;gap:8px;margin-top:14px;}
+  .deal-imgs img{width:56px;height:56px;object-fit:cover;border-radius:8px;border:1px solid var(--line);}
+
+  /* ===== 户型 ===== */
+  .house{background:linear-gradient(180deg,var(--brown-800) 0%,var(--brown-900) 100%);color:#f3ebdb;}
+  .house .sec-title{color:#fff;}
+  .house .sec-eyebrow{color:var(--gold-light);}
+  .house-tag{
+    text-align:center;font-size:15px;letter-spacing:.15em;color:var(--gold-light);
+    margin-bottom:24px;
+  }
+  .house-size{
+    text-align:center;font-size:44px;font-weight:900;color:#fff;line-height:1;
+    margin-bottom:6px;
+  }
+  .house-size small{font-size:16px;font-weight:400;letter-spacing:.1em;color:var(--gold-light);}
+  .house-type{
+    text-align:center;font-size:13px;letter-spacing:.25em;color:#cfc0a5;margin-bottom:28px;
+  }
+  .house-points{display:flex;flex-direction:column;gap:14px;}
+  .hpt{
+    display:flex;gap:12px;align-items:flex-start;
+    background:rgba(255,255,255,.05);border-left:3px solid var(--gold);
+    padding:12px 14px;border-radius:0 10px 10px 0;
+  }
+  .hpt-num{
+    font-size:18px;font-weight:900;color:var(--gold-light);line-height:1.2;min-width:24px;
+  }
+  .hpt-txt{font-size:13.5px;line-height:1.7;color:#e8dcc4;}
+
+  /* ===== 配套 ===== */
+  .amen{background:var(--cream-2);}
+  .amen-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .amen-item{
+    background:#fff;border-radius:12px;padding:18px 14px;text-align:center;
+    border:1px solid var(--line);
+  }
+  .amen-icon{
+    width:40px;height:40px;margin:0 auto 10px;color:var(--gold);
+  }
+  .amen-item h4{font-size:14px;color:var(--brown-800);margin-bottom:6px;font-weight:700;}
+  .amen-item p{font-size:12px;color:var(--ink-soft);line-height:1.6;}
+
+  /* ===== CTA 底部 ===== */
+  .cta{
+    background:var(--brown-900);color:#fff;padding:40px 24px 90px;text-align:center;
+  }
+  .cta-logo{width:150px;margin:0 auto 20px;filter:brightness(0) invert(1);opacity:.9;}
+  .cta-addr{font-size:13px;line-height:1.9;color:#cfc0a5;margin-bottom:24px;letter-spacing:.05em;}
+  .cta-phone{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--gold);color:#fff;text-decoration:none;
+    font-size:18px;font-weight:800;letter-spacing:.05em;
+    padding:14px 36px;border-radius:40px;
+    box-shadow:0 6px 20px rgba(184,146,74,.4);
+  }
+  .cta-phone svg{width:18px;height:18px;}
+  .cta-note{font-size:11px;color:#8a7560;margin-top:18px;letter-spacing:.1em;}
+
+  /* ===== 固定底部拨号条 ===== */
+  .fixed-bar{
+    position:fixed;bottom:0;left:50%;transform:translateX(-50%);
+    width:100%;max-width:480px;
+    background:rgba(42,28,16,.97);backdrop-filter:blur(10px);
+    padding:12px 16px;display:flex;gap:10px;align-items:center;
+    border-top:1px solid rgba(184,146,74,.3);z-index:50;
+  }
+  .fixed-bar .fb-info{flex:1;line-height:1.3;}
+  .fixed-bar .fb-p{font-size:15px;font-weight:800;color:var(--gold-light);letter-spacing:.05em;}
+  .fixed-bar .fb-a{font-size:10.5px;color:#b8a58a;}
+  .fixed-bar a{
+    background:var(--gold);color:#fff;text-decoration:none;
+    font-size:14px;font-weight:700;padding:10px 18px;border-radius:24px;white-space:nowrap;
+  }
+
+  /* 滚动渐入 */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.on{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    .hero-scroll{animation:none;}
+  }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- HERO -->
+  <div class="hero">
+    <img class="hero-logo" src="assets/image5.png" alt="龙城誉峰天境">
+    <div class="hero-mid">
+      <div class="hero-tag">房交会专场</div>
+      <h1 class="hero-title serif">现房<br>即买即办证</h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub">过马路顶配菜市场冷链园 · 生活便捷房源升值</p>
+    </div>
+    <div class="hero-scroll">下滑了解详情 ▾</div>
+  </div>
+
+  <!-- 配套速览 -->
+  <div class="quick-bar reveal">
+    <div class="q-main">八幼 / 八小 / 八中 / 民高 · 目送式教育圈</div>
+    <div class="q-sub">超市 · 银行 · 公园 · 商场 · 菜市场<br>一华里内 校门到家门一站配齐</div>
+  </div>
+
+  <!-- 三档优惠 -->
+  <section class="deal">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">房交会抢好房</div>
+      <h2 class="sec-title serif">早下定 · 享豪礼</h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <!-- 第一档 -->
+    <div class="deal-card best reveal">
+      <div class="deal-badge">最优惠</div>
+      <div class="deal-stage">第一档 · 抢先期</div>
+      <div class="deal-date">10月30日 — 11月3日 · 抢先下定</div>
+      <h3 class="deal-title">收官前最豪横的一档</h3>
+      <p class="deal-gifts">
+        赠<span class="hl">产权车位</span>，享<span class="hl">3万硬装升级</span>、全屋软装、3+1家具及<span class="hl">12件智能家电</span>，赠<span class="hl">五年物业费</span>。
+      </p>
+      <div class="deal-imgs">
+        <img src="assets/image2.png" alt="智能家电">
+        <img src="assets/image3.png" alt="家电礼包">
+        <img src="assets/image4.png" alt="产权车位">
+      </div>
+    </div>
+
+    <!-- 第二档 -->
+    <div class="deal-card reveal">
+      <div class="deal-stage">第二档 · 递减期</div>
+      <div class="deal-date">11月4日 — 11月8日 · 限时下定</div>
+      <h3 class="deal-title">福利递减 错过再无</h3>
+      <p class="deal-gifts">
+        赠<span class="hl">五年车位使用权</span>，享<span class="hl">3万硬装升级</span>、赠全屋软装、<span class="hl">三年物业费</span>；抽奖获取家具家电。
+      </p>
+    </div>
+
+    <!-- 第三档 -->
+    <div class="deal-card reveal">
+      <div class="deal-stage">第三档 · 收官期</div>
+      <div class="deal-date">11月9日 — 11月30日 · 收官下定</div>
+      <h3 class="deal-title">收官之选 福利不减</h3>
+      <p class="deal-gifts">
+        赠<span class="hl">两年车位使用权</span>，享<span class="hl">3万硬装升级</span>、赠<span class="hl">两年物业费</span>；抽奖获取家具家电及全屋软装。
+      </p>
+    </div>
+  </section>
+
+  <!-- 户型 -->
+  <section class="house">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">多一间灵动 · 多十分圆满</div>
+      <h2 class="sec-title serif">有面有学有生活</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="house-tag reveal">老小无忧 · 安好家</div>
+    <div class="house-size reveal">115<small> ㎡</small></div>
+    <div class="house-type reveal">3+1户型 · 两厅双卫 · 双阳台</div>
+    <div class="house-points">
+      <div class="hpt reveal">
+        <div class="hpt-num">01</div>
+        <div class="hpt-txt">安顿三代同堂，双厅宽绰待客，双卫起居皆从容。</div>
+      </div>
+      <div class="hpt reveal">
+        <div class="hpt-num">02</div>
+        <div class="hpt-txt">双阳台一面晒暖阳一面赏风景，兼得烟火与诗意。</div>
+      </div>
+      <div class="hpt reveal">
+        <div class="hpt-num">03</div>
+        <div class="hpt-txt">多出一间，书房茶室或多孩房，一室多用皆称心。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 配套价值 -->
+  <section class="amen">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">品质看得见 · 价值超预期</div>
+      <h2 class="sec-title serif">六重生活配套</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="amen-grid">
+      <div class="amen-item reveal">
+        <svg class="amen-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4"/></svg>
+        <h4>精装大堂</h4>
+        <p>高配电梯平稳，精装大堂显尊贵</p>
+      </div>
+      <div class="amen-item reveal">
+        <svg class="amen-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10L12 5 2 10l10 5 10-5zM6 12v5c3 2 9 2 12 0v-5"/></svg>
+        <h4>校门到家</h4>
+        <p>一华里内，校门到家门一站配齐</p>
+      </div>
+      <div class="amen-item reveal">
+        <svg class="amen-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l1-5h16l1 5M4 9v11h16V9M9 13h6"/></svg>
+        <h4>商超医疗</h4>
+        <p>商超医疗环布，出门即达真便捷</p>
+      </div>
+      <div class="amen-item reveal">
+        <svg class="amen-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 7l2 13h12l2-13M9 7V5a3 3 0 016 0v2"/></svg>
+        <h4>冷链菜市</h4>
+        <p>马路对面菜市场，冷链直达到铺</p>
+      </div>
+      <div class="amen-item reveal">
+        <svg class="amen-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+        <h4>租售管家</h4>
+        <p>专业租售管家，代租代管都省心</p>
+      </div>
+      <div class="amen-item reveal">
+        <svg class="amen-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 11h16a8 8 0 01-16 0zM12 11V3M8 3h8"/></svg>
+        <h4>社区食堂</h4>
+        <p>社区食堂三餐暖胃，邻里常相聚</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <img class="cta-logo" src="assets/image5.png" alt="龙城誉峰天境">
+    <p class="cta-addr">
+      项目地址：靖西市绣球大道8号<br>（德爱区南方电网旁）
+    </p>
+    <a class="cta-phone" href="tel:07766297777">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      财富热线 0776-6297777
+    </a>
+    <p class="cta-note">誉峰之巅 · 天镜之境 · 靖西山水百姓之家</p>
+  </div>
+
+  <!-- 固定底部条 -->
+  <div class="fixed-bar">
+    <div class="fb-info">
+      <div class="fb-p">现房即买即办证</div>
+      <div class="fb-a">靖西市绣球大道8号 · 南方电网旁</div>
+    </div>
+    <a href="tel:07766297777">一键拨号</a>
+  </div>
+
+</div>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
